@@ -28,12 +28,18 @@ products = [
 #print(*products, sep = "\n")
 # pprint(products)
 
+def sort_by_name(any_products):
+    return any_products ["name"]
+
+sorted_products = sorted(products, key=sort_by_name)
+
+
 products_count = len(products)
 print("--------------")
 print("THERE ARE " + str(products_count) + " PRODUCTS:")
 print("--------------")
 
-for p in products:
+for p in sorted_products:
     price_usd = "${0:.2f}".format(p["price"])
     print("..." + p["name"] + " (" + str(price_usd) + ")")
 
